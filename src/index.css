@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-heading: 'Outfit', sans-serif;
+    --font-serif: 'Cinzel', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+
+    /* Theme Tokens - Light Mode */
+    --color-bg-primary: #F9F7F2;
+    --color-bg-secondary: #FFFFFF;
+    --color-bg-tertiary: #F2EFE9;
+    --color-bg-elevated: #FFFFFF;
+    --color-forest: #0B2E23;
+    --color-forest-dark: #071F17;
+    --color-forest-light: #164335;
+    --color-gold: #C89D42;
+    --color-gold-hover: #D4AF37;
+    --color-gold-light: #F7EEDB;
+    --color-gold-muted: #8F702B;
+    --color-text-primary: #17241F;
+    --color-text-secondary: #485951;
+    --color-text-muted: #7A8C83;
+    --color-border: #E6E0D2;
+    --color-border-subtle: #ECE8DD;
+    --color-accent-bar: #C89D42;
+  }
+
+  .dark {
+    /* Theme Tokens - Dark Mode */
+    --color-bg-primary: #071913;
+    --color-bg-secondary: #0B221A;
+    --color-bg-tertiary: #0F2D23;
+    --color-bg-elevated: #13362A;
+    --color-forest: #0F3B2E;
+    --color-forest-dark: #061711;
+    --color-forest-light: #185240;
+    --color-gold: #D6A84E;
+    --color-gold-hover: #E3B85F;
+    --color-gold-light: rgba(214, 168, 78, 0.12);
+    --color-gold-muted: #A37F35;
+    --color-text-primary: #F4F7F4;
+    --color-text-secondary: #C3CEC7;
+    --color-text-muted: #8E9E96;
+    --color-border: #1C4436;
+    --color-border-subtle: #16362B;
+    --color-accent-bar: #D6A84E;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Custom Utilities for Premium International Trade feel */
+.font-serif-brand {
+  font-family: 'Cinzel', serif;
+}
+
+.font-heading {
+  font-family: 'Outfit', sans-serif;
+}
+
+.font-body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #071F17;
+}
+::-webkit-scrollbar-thumb {
+  background: #C89D42;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+/* Subtle glow and luxury card border */
+.gold-glow {
+  box-shadow: 0 0 25px -5px rgba(200, 157, 66, 0.25);
+}
+
+.gold-border-gradient {
+  border-image: linear-gradient(to right, #C89D42, rgba(200, 157, 66, 0.2), #C89D42) 1;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
