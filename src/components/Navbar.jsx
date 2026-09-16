@@ -50,10 +50,13 @@ export default function Navbar({ activeSection, currentTheme, onToggleTheme }) {
       id="main-navigation"
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#F9F7F2]/95 dark:bg-[#071F17]/95 backdrop-blur-md shadow-md py-3 border-b border-[#E5DFC8]/80 dark:border-[#1A3D30]'
-          : 'bg-[#F9F7F2]/80 dark:bg-[#071F17]/80 backdrop-blur-sm py-5 border-b border-transparent'
+          ? 'bg-gradient-to-r from-[#FAF7F0]/95 via-[#EFE6D6]/95 to-[#F6F0E5]/95 dark:from-[#061D15]/95 dark:via-[#0D382B]/95 dark:to-[#08241C]/95 backdrop-blur-md shadow-lg py-3 border-b border-[#C89D42]/30'
+          : 'bg-gradient-to-r from-[#FAF7F0]/90 via-[#EFE6D6]/90 to-[#F6F0E5]/90 dark:from-[#061D15]/90 dark:via-[#0D382B]/90 dark:to-[#08241C]/90 backdrop-blur-sm py-4 border-b border-[#E5DFC8]/70 dark:border-[#1E4D3C]/70'
       }`}
     >
+      {/* Top subtle golden shimmer line */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C89D42] to-transparent opacity-80 pointer-events-none"></div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Brand Logo */}
@@ -150,7 +153,7 @@ export default function Navbar({ activeSection, currentTheme, onToggleTheme }) {
       {mobileMenuOpen && (
         <div
           id="mobile-nav-panel"
-          className="xl:hidden bg-[#F9F7F2] dark:bg-[#071F17] border-b border-[#E5DFC8] dark:border-[#1A3D30] shadow-xl px-4 pt-3 pb-6 space-y-2 animate-fadeIn"
+          className="xl:hidden bg-gradient-to-b from-[#FAF7F0] via-[#EFE6D6] to-[#F6F0E5] dark:from-[#061D15] dark:via-[#0D382B] dark:to-[#08241C] border-b border-[#C89D42]/30 shadow-2xl px-4 pt-3 pb-6 space-y-2 animate-fadeIn"
         >
           <div className="flex flex-col space-y-1">
             {navLinks.map((link) => {

@@ -45,10 +45,13 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#071F17] text-[#F9F7F2] border-t border-[#1C4535] relative overflow-hidden transition-colors">
+    <footer className="bg-gradient-to-b from-[#0F382B] via-[#071F17] to-[#03130E] text-[#F9F7F2] border-t border-[#C89D42]/40 relative overflow-hidden transition-colors">
+      {/* Top subtle golden shimmer accent bar */}
+      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#C89D42] to-transparent opacity-85"></div>
       
-      {/* Ambient background glow */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#C89D42]/5 rounded-full blur-3xl pointer-events-none"></div>
+      {/* Ambient background glows */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-gradient-to-br from-[#C89D42]/15 via-[#25D366]/5 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-0 left-10 w-80 h-80 bg-gradient-to-tr from-[#0B2E23]/40 to-transparent rounded-full blur-2xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-[#1A3D30]">

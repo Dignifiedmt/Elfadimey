@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight, MessageSquare, ShieldCheck, Handshake, Globe2, Briefcase } from 'lucide-react';
 import { motion } from 'motion/react';
-import heroTradeSummit from '../assets/images/global_trade_summit_1789581967970.jpg';
+import heroFiveTradeLeaders from '../assets/images/five_trade_leaders_1789585031050.jpg';
 
 export default function Hero() {
   const handleScrollTo = (e, targetId) => {
@@ -21,14 +21,38 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[90vh] pt-28 pb-16 lg:py-28 flex items-center overflow-hidden bg-gradient-to-b from-[#F2EFE9]/80 via-[#F9F7F2] to-[#FAF8F5] dark:from-[#051711] dark:via-[#071F17] dark:to-[#08241B] transition-colors duration-300"
+      className="relative min-h-[92vh] pt-24 pb-16 lg:pt-28 lg:pb-24 flex flex-col justify-center overflow-hidden bg-gradient-to-b from-[#EFE8DA] via-[#F7F4EE] to-[#FAF8F5] dark:from-[#09261E] dark:via-[#071F17] dark:to-[#04130E] transition-colors duration-300"
     >
+      {/* Dynamic Multi-Color Gradient Banner Immediately After Header */}
+      <div className="w-full bg-gradient-to-r from-[#071F17] via-[#0E3D2F] via-[#C89D42]/30 via-[#0E3D2F] to-[#071F17] border-y border-[#C89D42]/35 py-2.5 px-4 mb-6 shadow-md relative z-20">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-xs text-[#F9F7F2]">
+          <div className="flex items-center gap-2">
+            <span className="flex h-2 w-2 rounded-full bg-[#25D366] animate-ping"></span>
+            <span className="font-bold tracking-wider text-[#C89D42] uppercase text-[11px] sm:text-xs">
+              Direct Strategic Corridors:
+            </span>
+            <span className="font-medium text-[#E3EDE8]">
+              Iran • Nigeria • Africa
+            </span>
+          </div>
+          <div className="hidden sm:flex items-center gap-3 text-[11px] text-[#C5D7CE]">
+            <span className="px-2 py-0.5 rounded-full bg-[#C89D42]/20 border border-[#C89D42]/40 text-[#F5DE98] font-semibold">
+              End-to-End Trade Facilitation
+            </span>
+            <span>• Verified B2B Direct Sourcing</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Top Gradient Lighting Overlay Immediately After Header */}
+      <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-[#C89D42]/20 via-[#0B2E23]/10 to-transparent dark:from-[#C89D42]/25 dark:via-[#0E382B]/25 dark:to-transparent pointer-events-none"></div>
+
       {/* Background Graphic Grid */}
-      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none bg-[radial-gradient(#0B2E23_1px,transparent_1px)] [background-size:24px_24px]"></div>
+      <div className="absolute inset-0 opacity-[0.035] dark:opacity-[0.06] pointer-events-none bg-[radial-gradient(#0B2E23_1px,transparent_1px)] [background-size:24px_24px]"></div>
 
       {/* Ambient Lighting Orbs with Classic Gold/Forest Gradients */}
-      <div className="absolute -top-24 right-10 w-96 h-96 rounded-full bg-gradient-to-br from-[#C89D42]/20 via-[#DFB864]/10 to-transparent blur-3xl pointer-events-none animate-pulse"></div>
-      <div className="absolute bottom-10 left-5 w-80 h-80 rounded-full bg-gradient-to-tr from-[#0B2E23]/15 via-[#164335]/25 to-transparent blur-3xl pointer-events-none"></div>
+      <div className="absolute -top-12 right-10 w-96 h-96 rounded-full bg-gradient-to-br from-[#C89D42]/25 via-[#DFB864]/15 to-transparent blur-3xl pointer-events-none animate-pulse"></div>
+      <div className="absolute bottom-10 left-5 w-80 h-80 rounded-full bg-gradient-to-tr from-[#0B2E23]/25 via-[#164335]/30 to-transparent blur-3xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
@@ -150,8 +174,8 @@ export default function Hero() {
               {/* Main Image Frame Container */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-[#C89D42]/50 bg-[#0B2E23]">
                 <img
-                  src={heroTradeSummit || "/business-discussion.jpg"}
-                  alt="Two Nigerian business executives (one in native Hausa dressing and one in suit), one White executive, and one Arab executive in bilateral trade conference"
+                  src={heroFiveTradeLeaders || "/business-discussion.jpg"}
+                  alt="Five male international business executives in a bilateral trade summit: a Nigerian business leader in authentic Hausa native attire in the middle, joined by another Nigerian executive, a White executive, an Arab executive, and an international delegate"
                   className="w-full h-[360px] sm:h-[420px] object-cover transition-transform duration-700 hover:scale-105"
                   loading="eager"
                   referrerPolicy="no-referrer"
