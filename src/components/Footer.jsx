@@ -1,6 +1,13 @@
 import React from 'react';
 import Logo from './Logo';
-import { ExternalLink, Phone } from 'lucide-react';
+import { ExternalLink, Mail } from 'lucide-react';
+import {
+  XTwitterIcon,
+  FacebookIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  WhatsAppIcon
+} from './SvgIcons';
 
 export default function Footer() {
   const quickLinks = [
@@ -115,77 +122,100 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Connect & Social Media Column */}
-          <div className="lg:col-span-3 space-y-3">
+          {/* Connect & Channels Column */}
+          <div className="lg:col-span-3">
             <h4 className="text-xs uppercase tracking-widest font-bold text-[#D4AF37] mb-4">
               Official Channels
             </h4>
 
-            {/* WhatsApp */}
-            <a
-              href="https://wa.me/2348100788978"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-between p-2.5 rounded-lg bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/30 text-xs font-semibold text-[#F9F7F2] transition-colors group"
-            >
-              <div className="flex items-center gap-2">
-                <span className="w-6 h-6 rounded bg-[#25D366] text-white flex items-center justify-center font-bold text-xs">
-                  <Phone className="w-3.5 h-3.5 fill-current" />
+            {/* Circular Icons Channel List: Circular icons with name on desktop, without name on mobile */}
+            <div className="flex flex-wrap md:flex-col gap-2.5 sm:gap-3">
+              {/* Facebook */}
+              <a
+                href="https://www.facebook.com/share/19SQYsLXSc/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Elfadimey Global Concept Ltd on Facebook"
+                className="inline-flex items-center gap-2.5 text-xs font-semibold text-[#CBD8D1] hover:text-[#D4AF37] transition-colors group"
+              >
+                <span className="w-9 h-9 rounded-full bg-[#1877F2]/15 text-[#1877F2] dark:text-[#60A5FA] border border-[#1877F2]/30 group-hover:border-[#1877F2] group-hover:scale-105 flex items-center justify-center shrink-0 transition-all duration-200">
+                  <FacebookIcon className="w-4 h-4" />
                 </span>
-                <span>WhatsApp: <strong className="font-mono text-[#52E38B]">08100788978</strong></span>
-              </div>
-              <ExternalLink className="w-3.5 h-3.5 text-[#52E38B]" />
-            </a>
+                <span className="hidden md:inline">Facebook</span>
+              </a>
 
-            {/* Facebook */}
-            <a
-              href="https://www.facebook.com/share/19SQYsLXSc/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-between p-2.5 rounded-lg bg-[#0F3529] hover:bg-[#164335] text-xs font-semibold text-[#F9F7F2] border border-[#235846] transition-colors group"
-            >
-              <div className="flex items-center gap-2">
-                <span className="w-6 h-6 rounded bg-[#1877F2] text-white flex items-center justify-center font-bold text-xs">
-                  f
+              {/* WhatsApp */}
+              <a
+                href="https://wa.me/2348100788978"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Direct WhatsApp: +234 810 078 8978"
+                className="inline-flex items-center gap-2.5 text-xs font-semibold text-[#CBD8D1] hover:text-[#52E38B] transition-colors group"
+              >
+                <span className="w-9 h-9 rounded-full bg-[#25D366]/15 text-[#25D366] dark:text-[#52E38B] border border-[#25D366]/30 group-hover:border-[#25D366] group-hover:scale-105 flex items-center justify-center shrink-0 transition-all duration-200">
+                  <WhatsAppIcon className="w-4 h-4" />
                 </span>
-                <span>Official Facebook</span>
-              </div>
-              <ExternalLink className="w-3.5 h-3.5 text-[#C89D42]" />
-            </a>
+                <span className="hidden md:inline">WhatsApp (+234 810 078 8978)</span>
+              </a>
 
-            {/* Social grid: X, Instagram, LinkedIn */}
-            <div className="grid grid-cols-3 gap-2 pt-1 text-xs">
+              {/* Email */}
+              <a
+                href="mailto:elfadimey@gmail.com"
+                title="Official Email: elfadimey@gmail.com"
+                className="inline-flex items-center gap-2.5 text-xs font-semibold text-[#CBD8D1] hover:text-[#D4AF37] transition-colors group"
+              >
+                <span className="w-9 h-9 rounded-full bg-[#C89D42]/15 text-[#C89D42] dark:text-[#D4AF37] border border-[#C89D42]/30 group-hover:border-[#C89D42] group-hover:scale-105 flex items-center justify-center shrink-0 transition-all duration-200">
+                  <Mail className="w-4 h-4" />
+                </span>
+                <span className="hidden md:inline">Email Desk</span>
+              </a>
+
+              {/* X */}
               <a
                 href="https://x.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-[#0F3529] hover:bg-[#164335] border border-[#235846] text-center font-bold text-white transition-colors"
-                title="x.com"
+                title="Follow on X"
+                className="inline-flex items-center gap-2.5 text-xs font-semibold text-[#CBD8D1] hover:text-white transition-colors group"
               >
-                𝕏 x.com
+                <span className="w-9 h-9 rounded-full bg-white/10 text-white border border-white/20 group-hover:border-white group-hover:scale-105 flex items-center justify-center shrink-0 transition-all duration-200">
+                  <XTwitterIcon className="w-3.5 h-3.5" />
+                </span>
+                <span className="hidden md:inline">X (Twitter)</span>
               </a>
+
+              {/* Instagram */}
               <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-[#0F3529] hover:bg-[#164335] border border-[#235846] text-center font-bold text-[#E5BE65] transition-colors"
-                title="instagram.com"
+                title="Follow on Instagram"
+                className="inline-flex items-center gap-2.5 text-xs font-semibold text-[#CBD8D1] hover:text-[#E1306C] transition-colors group"
               >
-                Instagram
+                <span className="w-9 h-9 rounded-full bg-[#E1306C]/15 text-[#E1306C] border border-[#E1306C]/30 group-hover:border-[#E1306C] group-hover:scale-105 flex items-center justify-center shrink-0 transition-all duration-200">
+                  <InstagramIcon className="w-3.5 h-3.5" />
+                </span>
+                <span className="hidden md:inline">Instagram</span>
               </a>
+
+              {/* LinkedIn */}
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-[#0F3529] hover:bg-[#164335] border border-[#235846] text-center font-bold text-[#38BDF8] transition-colors"
-                title="linkedin.com"
+                title="Connect on LinkedIn"
+                className="inline-flex items-center gap-2.5 text-xs font-semibold text-[#CBD8D1] hover:text-[#38BDF8] transition-colors group"
               >
-                LinkedIn
+                <span className="w-9 h-9 rounded-full bg-[#0A66C2]/15 text-[#0A66C2] dark:text-[#38BDF8] border border-[#0A66C2]/30 group-hover:border-[#0A66C2] group-hover:scale-105 flex items-center justify-center shrink-0 transition-all duration-200">
+                  <LinkedInIcon className="w-3.5 h-3.5" />
+                </span>
+                <span className="hidden md:inline">LinkedIn</span>
               </a>
             </div>
 
-            <div className="pt-2 text-[11px] text-[#80958A]">
-              Iran • Nigeria • African Markets
+            <div className="pt-5 text-[11px] text-[#80958A] flex items-center justify-between border-t border-[#1A3D30] mt-4">
+              <span>Bilateral Corridors</span>
+              <span className="text-[#C89D42]">Iran • Nigeria • Africa</span>
             </div>
           </div>
 

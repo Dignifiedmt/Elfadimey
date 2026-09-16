@@ -2,6 +2,17 @@ import React, { useState } from 'react';
 import SectionHeading from './SectionHeading';
 import { marketsData, tradeCorridors } from '../data/markets';
 import { Check, ArrowRight, Globe, Layers, Navigation } from 'lucide-react';
+import { IranFlagSvg, NigeriaFlagSvg, AfricaContinentSvg } from './SvgIcons';
+
+function renderMarketVisual(id, isLarge = false) {
+  if (id === 'iran') {
+    return <IranFlagSvg className={isLarge ? "w-12 h-8" : "w-9 h-6"} />;
+  }
+  if (id === 'nigeria') {
+    return <NigeriaFlagSvg className={isLarge ? "w-12 h-8" : "w-9 h-6"} />;
+  }
+  return <AfricaContinentSvg className={isLarge ? "w-10 h-10 text-[#C89D42]" : "w-8 h-8 text-[#C89D42]"} />;
+}
 
 export default function Markets() {
   const [activeMarketId, setActiveMarketId] = useState('iran');
@@ -40,7 +51,9 @@ export default function Markets() {
                   }`}
                 >
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-3xl">{market.flag}</span>
+                    <div className="flex items-center">
+                      {renderMarketVisual(market.id, false)}
+                    </div>
                     <span className={`text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full ${
                       isSelected
                         ? 'bg-[#C89D42] text-[#071F17]'
@@ -76,8 +89,10 @@ export default function Markets() {
           <div className="bg-[#FFFFFF] dark:bg-[#0B221A] rounded-2xl p-6 sm:p-8 border border-[#E5DFC8] dark:border-[#184232] shadow-md grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             <div className="lg:col-span-7 space-y-4">
-              <div className="flex items-center gap-3">
-                <span className="text-4xl">{activeMarket.flag}</span>
+              <div className="flex items-center gap-3.5">
+                <div className="p-1 rounded-lg bg-[#F2EFE9] dark:bg-[#071913] border border-[#DDD7C5] dark:border-[#1A4535]">
+                  {renderMarketVisual(activeMarket.id, true)}
+                </div>
                 <div>
                   <div className="text-xs uppercase font-mono tracking-widest text-[#8A6C28] dark:text-[#D4AF37]">
                     {activeMarket.strategicRole}
@@ -152,7 +167,7 @@ export default function Markets() {
                 <div key={idx} className="p-4 rounded-xl bg-[#FFFFFF] dark:bg-[#0B221A] border border-[#E5DFC8] dark:border-[#1E4D3C]">
                   <div className="flex items-center gap-2 text-xs font-bold text-[#8A6C28] dark:text-[#D4AF37] mb-1">
                     <span>{corridor.from}</span>
-                    <span className="text-[#C89D42]">➔</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-[#C89D42]" />
                     <span>{corridor.to}</span>
                   </div>
                   <h5 className="text-sm font-bold text-[#0B2E23] dark:text-[#F8F6F0] mb-1">

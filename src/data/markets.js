@@ -2,7 +2,7 @@ export const marketsData = [
   {
     id: "iran",
     name: "Iran",
-    flag: "🇮🇷",
+    code: "IR",
     role: "Manufacturing & Sourcing Hub",
     headline: "Connecting with manufacturers and quality suppliers",
     description: "A hub of industrial manufacturing, petrochemicals, building materials, agricultural commodities, and specialized production. Elfadimey connects international buyers with reliable Iranian suppliers and production facilities.",
@@ -21,7 +21,7 @@ export const marketsData = [
   {
     id: "nigeria",
     name: "Nigeria",
-    flag: "🇳🇬",
+    code: "NG",
     role: "Commercial Gateway & Major Buyer Market",
     headline: "Identifying buyers, distributors, businesses and project opportunities",
     description: "Africa's largest economy and dynamic commercial engine. Elfadimey identifies vetted importers, retail distributors, major infrastructure contractors, and institutional buyers seeking international supply relationships.",
@@ -40,7 +40,7 @@ export const marketsData = [
   {
     id: "africa",
     name: "African Markets",
-    flag: "🌍",
+    code: "AF",
     role: "Regional Trade Expansion Zone",
     headline: "Expanding sustainable cross-border trade opportunities",
     description: "Leveraging the African Continental Free Trade Area (AfCFTA) and established regional economic corridors (ECOWAS, EAC, SADC) to extend trade pathways for viable products, raw materials, and strategic B2B connections.",

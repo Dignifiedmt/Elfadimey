@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Clock, Calendar, Bookmark, Share2 } from 'lucide-react';
+import { ArrowLeft, Clock, Calendar, Bookmark, Share2 } from 'lucide-react';
 
 export default function ArticleModal({ article, onClose }) {
   if (!article) return null;
@@ -18,10 +18,12 @@ export default function ArticleModal({ article, onClose }) {
       >
         <button
           onClick={onClose}
-          aria-label="Close article"
-          className="absolute top-5 right-5 p-2 rounded-full text-[#6B7D74] dark:text-[#A3B8AD] hover:bg-[#F2EFE9] dark:hover:bg-[#0F3529] hover:text-[#0B2E23] dark:hover:text-[#F8F6F0] transition-colors"
+          aria-label="Back to Home"
+          title="Back to Home"
+          className="absolute top-5 right-5 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-[#6B7D74] dark:text-[#A3B8AD] bg-[#F2EFE9] dark:bg-[#0B221A] hover:bg-[#E5DFC8] dark:hover:bg-[#164335] hover:text-[#0B2E23] dark:hover:text-[#F8F6F0] transition-colors border border-[#E5DFC8] dark:border-[#1E4D3C]"
         >
-          <X className="w-6 h-6" />
+          <ArrowLeft className="w-4 h-4" />
+          <span>Back to Home</span>
         </button>
 
         <div className="mb-6 pr-8">
@@ -59,9 +61,10 @@ export default function ArticleModal({ article, onClose }) {
         <div className="flex justify-end pt-4 border-t border-[#E5DFC8] dark:border-[#1A3D30]">
           <button
             onClick={onClose}
-            className="px-6 py-2.5 rounded-lg text-sm font-semibold bg-[#0B2E23] text-[#F9F7F2] dark:bg-[#C89D42] dark:text-[#071F17]"
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-bold bg-[#0B2E23] text-[#F9F7F2] hover:bg-[#164335] dark:bg-[#C89D42] dark:text-[#071F17] dark:hover:bg-[#D4AF37] transition-all shadow-sm"
           >
-            Close Article
+            <ArrowLeft className="w-4 h-4" />
+            <span>Back to Home</span>
           </button>
         </div>
       </div>

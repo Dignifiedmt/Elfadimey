@@ -1,6 +1,7 @@
 import React from 'react';
 import SectionHeading from './SectionHeading';
 import { CheckCircle2, ArrowRight, ShieldCheck, Compass, Handshake, Globe2 } from 'lucide-react';
+import { IranFlagSvg, NigeriaFlagSvg, AfricaContinentSvg } from './SvgIcons';
 
 export default function About() {
   const pillars = [
@@ -116,18 +117,18 @@ export default function About() {
 
                 {/* Corridors highlight strip */}
                 <div className="grid grid-cols-3 gap-2 pt-4 border-t border-[#1C4B39] text-center">
-                  <div className="p-2 rounded-lg bg-[#0F3529]">
-                    <span className="block text-base">🇮🇷</span>
+                  <div className="p-2.5 rounded-xl bg-[#0F3529] flex flex-col items-center justify-center">
+                    <IranFlagSvg className="w-6 h-4 mb-1" />
                     <span className="text-[11px] font-bold text-[#D4AF37]">Iran</span>
                     <span className="block text-[9px] text-[#A3B8AD]">Sourcing</span>
                   </div>
-                  <div className="p-2 rounded-lg bg-[#0F3529]">
-                    <span className="block text-base">🇳🇬</span>
+                  <div className="p-2.5 rounded-xl bg-[#0F3529] flex flex-col items-center justify-center">
+                    <NigeriaFlagSvg className="w-6 h-4 mb-1" />
                     <span className="text-[11px] font-bold text-[#D4AF37]">Nigeria</span>
                     <span className="block text-[9px] text-[#A3B8AD]">Gateway</span>
                   </div>
-                  <div className="p-2 rounded-lg bg-[#0F3529]">
-                    <span className="block text-base">🌍</span>
+                  <div className="p-2.5 rounded-xl bg-[#0F3529] flex flex-col items-center justify-center">
+                    <AfricaContinentSvg className="w-5 h-5 mb-1 text-[#C89D42]" />
                     <span className="text-[11px] font-bold text-[#D4AF37]">Africa</span>
                     <span className="block text-[9px] text-[#A3B8AD]">Expansion</span>
                   </div>

@@ -1,5 +1,7 @@
 import React from 'react';
-import { ArrowRight, MessageSquare, ShieldCheck, Handshake, Globe2 } from 'lucide-react';
+import { ArrowRight, MessageSquare, ShieldCheck, Handshake, Globe2, Briefcase } from 'lucide-react';
+import { motion } from 'motion/react';
+import heroTradeSummit from '../assets/images/global_trade_summit_1789581967970.jpg';
 
 export default function Hero() {
   const handleScrollTo = (e, targetId) => {
@@ -19,22 +21,27 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[90vh] pt-28 pb-16 lg:py-28 flex items-center overflow-hidden bg-gradient-to-b from-[#F2EFE9]/70 via-[#F9F7F2] to-[#F9F7F2] dark:from-[#061711] dark:via-[#071F17] dark:to-[#071F17] transition-colors duration-300"
+      className="relative min-h-[90vh] pt-28 pb-16 lg:py-28 flex items-center overflow-hidden bg-gradient-to-b from-[#F2EFE9]/80 via-[#F9F7F2] to-[#FAF8F5] dark:from-[#051711] dark:via-[#071F17] dark:to-[#08241B] transition-colors duration-300"
     >
       {/* Background Graphic Grid */}
       <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none bg-[radial-gradient(#0B2E23_1px,transparent_1px)] [background-size:24px_24px]"></div>
 
-      {/* Ambient Lighting Orbs */}
-      <div className="absolute -top-24 right-10 w-96 h-96 rounded-full bg-[#C89D42]/10 blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-10 left-5 w-80 h-80 rounded-full bg-[#0B2E23]/10 dark:bg-[#164335]/20 blur-3xl pointer-events-none"></div>
+      {/* Ambient Lighting Orbs with Classic Gold/Forest Gradients */}
+      <div className="absolute -top-24 right-10 w-96 h-96 rounded-full bg-gradient-to-br from-[#C89D42]/20 via-[#DFB864]/10 to-transparent blur-3xl pointer-events-none animate-pulse"></div>
+      <div className="absolute bottom-10 left-5 w-80 h-80 rounded-full bg-gradient-to-tr from-[#0B2E23]/15 via-[#164335]/25 to-transparent blur-3xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
           {/* Left Column: Brand Copy & Conversion CTAs */}
-          <div className="lg:col-span-7 flex flex-col justify-center text-left">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 flex flex-col justify-center text-left"
+          >
             {/* Top Market Pillar Badge */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold tracking-wide bg-[#C89D42]/15 text-[#8A6C28] dark:text-[#E5BE65] border border-[#C89D42]/30 w-fit mb-6 shadow-sm">
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold tracking-wide bg-gradient-to-r from-[#C89D42]/20 to-[#E3BE6A]/10 text-[#8A6C28] dark:text-[#E5BE65] border border-[#C89D42]/35 w-fit mb-6 shadow-xs">
               <span className="flex h-2 w-2 rounded-full bg-[#C89D42] animate-ping"></span>
               <span>International Trade & Sourcing Facilitation</span>
             </div>
@@ -53,11 +60,11 @@ export default function Hero() {
             </p>
 
             {/* Primary & Secondary CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-8">
               <a
                 href="#services"
                 onClick={(e) => handleScrollTo(e, '#services')}
-                className="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl text-base font-bold bg-[#C89D42] hover:bg-[#D4AF37] text-[#071F17] shadow-lg shadow-[#C89D42]/20 hover:shadow-xl hover:shadow-[#C89D42]/30 transition-all duration-200 group text-center"
+                className="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl text-base font-bold bg-gradient-to-r from-[#C89D42] via-[#D4AF37] to-[#B88B2E] hover:from-[#D4AF37] hover:to-[#C89D42] text-[#071F17] shadow-lg shadow-[#C89D42]/20 hover:shadow-xl hover:shadow-[#C89D42]/30 transition-all duration-300 group text-center"
               >
                 <span>Explore Our Services</span>
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -66,41 +73,72 @@ export default function Hero() {
               <a
                 href="#contact"
                 onClick={(e) => handleScrollTo(e, '#contact')}
-                className="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl text-base font-semibold border-2 border-[#0B2E23] dark:border-[#C89D42]/60 text-[#0B2E23] dark:text-[#F8F6F0] hover:bg-[#0B2E23] hover:text-[#F9F7F2] dark:hover:bg-[#C89D42] dark:hover:text-[#071F17] transition-all duration-200 text-center"
+                className="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl text-base font-semibold border-2 border-[#0B2E23] dark:border-[#C89D42]/60 text-[#0B2E23] dark:text-[#F8F6F0] hover:bg-[#0B2E23] hover:text-[#F9F7F2] dark:hover:bg-[#C89D42] dark:hover:text-[#071F17] transition-all duration-300 text-center"
               >
                 <MessageSquare className="w-5 h-5 text-[#C89D42]" />
                 <span>Start a Business Conversation</span>
               </a>
             </div>
 
-            {/* Strategic Value Metrics */}
-            <div className="pt-6 border-t border-[#E5DFC8] dark:border-[#1A3D30] grid grid-cols-3 gap-4 sm:gap-6">
-              <div>
-                <span className="block text-2xl sm:text-3xl font-extrabold text-[#0B2E23] dark:text-[#D4AF37]">
-                  Strategic
-                </span>
-                <span className="text-xs sm:text-sm text-[#61736A] dark:text-[#9FB1A8] font-medium">
-                  Iran • Nigeria • Africa
-                </span>
-              </div>
-              <div>
-                <span className="block text-2xl sm:text-3xl font-extrabold text-[#0B2E23] dark:text-[#D4AF37]">
-                  6 Services
-                </span>
-                <span className="text-xs sm:text-sm text-[#61736A] dark:text-[#9FB1A8] font-medium">
-                  End-to-End Facilitation
-                </span>
-              </div>
-              <div>
-                <span className="block text-2xl sm:text-3xl font-extrabold text-[#0B2E23] dark:text-[#D4AF37]">
-                  Verified
-                </span>
-                <span className="text-xs sm:text-sm text-[#61736A] dark:text-[#9FB1A8] font-medium">
-                  B2B Trade Direct
-                </span>
+            {/* Strategic Value Metrics - Official Executive Layout */}
+            <div className="pt-6 border-t border-[#E5DFC8] dark:border-[#1A3D30]">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                {/* Pillar 1: Strategic */}
+                <div className="p-3.5 sm:p-4 rounded-2xl bg-gradient-to-br from-[#FFFFFF] via-[#FAF8F5] to-[#F5EFE6] dark:from-[#0B241C] dark:via-[#0E2D23] dark:to-[#071F17] border border-[#E5DFC8] dark:border-[#1A4535] hover:border-[#C89D42]/60 shadow-xs hover:shadow-md transition-all duration-300">
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <span className="w-6 h-6 rounded-full bg-gradient-to-br from-[#C89D42] to-[#9C7524] text-[#071F17] flex items-center justify-center shrink-0 shadow-xs">
+                      <Globe2 className="w-3.5 h-3.5" />
+                    </span>
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#8A6C28] dark:text-[#D4AF37]">
+                      Corridors
+                    </span>
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-black text-[#0B2E23] dark:text-[#F8F6F0] tracking-tight">
+                    Strategic
+                  </h3>
+                  <p className="text-xs font-semibold text-[#5A6E63] dark:text-[#BAC7C0] mt-0.5">
+                    Iran • Nigeria • Africa
+                  </p>
+                </div>
+
+                {/* Pillar 2: 6 Services */}
+                <div className="p-3.5 sm:p-4 rounded-2xl bg-gradient-to-br from-[#FFFFFF] via-[#FAF8F5] to-[#F5EFE6] dark:from-[#0B241C] dark:via-[#0E2D23] dark:to-[#071F17] border border-[#E5DFC8] dark:border-[#1A4535] hover:border-[#C89D42]/60 shadow-xs hover:shadow-md transition-all duration-300">
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <span className="w-6 h-6 rounded-full bg-gradient-to-br from-[#C89D42] to-[#9C7524] text-[#071F17] flex items-center justify-center shrink-0 shadow-xs">
+                      <Briefcase className="w-3.5 h-3.5" />
+                    </span>
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#8A6C28] dark:text-[#D4AF37]">
+                      Solutions
+                    </span>
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-black text-[#0B2E23] dark:text-[#F8F6F0] tracking-tight">
+                    6 Services
+                  </h3>
+                  <p className="text-xs font-semibold text-[#5A6E63] dark:text-[#BAC7C0] mt-0.5">
+                    End-to-End Facilitation
+                  </p>
+                </div>
+
+                {/* Pillar 3: Verified */}
+                <div className="p-3.5 sm:p-4 rounded-2xl bg-gradient-to-br from-[#FFFFFF] via-[#FAF8F5] to-[#F5EFE6] dark:from-[#0B241C] dark:via-[#0E2D23] dark:to-[#071F17] border border-[#E5DFC8] dark:border-[#1A4535] hover:border-[#C89D42]/60 shadow-xs hover:shadow-md transition-all duration-300">
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <span className="w-6 h-6 rounded-full bg-gradient-to-br from-[#C89D42] to-[#9C7524] text-[#071F17] flex items-center justify-center shrink-0 shadow-xs">
+                      <ShieldCheck className="w-3.5 h-3.5" />
+                    </span>
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#8A6C28] dark:text-[#D4AF37]">
+                      Compliance
+                    </span>
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-black text-[#0B2E23] dark:text-[#F8F6F0] tracking-tight">
+                    Verified
+                  </h3>
+                  <p className="text-xs font-semibold text-[#5A6E63] dark:text-[#BAC7C0] mt-0.5">
+                    B2B Trade Direct
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column: High-End Photographic Showcase of African and White Business People in Discussion */}
           <div className="lg:col-span-5 relative">
@@ -112,10 +150,11 @@ export default function Hero() {
               {/* Main Image Frame Container */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-[#C89D42]/50 bg-[#0B2E23]">
                 <img
-                  src="/business-discussion.jpg"
-                  alt="African and international business executives discussing cross-border trade contracts and commercial opportunities"
+                  src={heroTradeSummit || "/business-discussion.jpg"}
+                  alt="Two Nigerian business executives (one in native Hausa dressing and one in suit), one White executive, and one Arab executive in bilateral trade conference"
                   className="w-full h-[360px] sm:h-[420px] object-cover transition-transform duration-700 hover:scale-105"
                   loading="eager"
+                  referrerPolicy="no-referrer"
                 />
 
                 {/* Subtle gradient overlay at the bottom for legibility */}
